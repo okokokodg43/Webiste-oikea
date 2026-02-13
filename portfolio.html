@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio - Okko Karhunen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <div id="portfolio-banner">
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+
+        <img src="images/logo.png" class="logo">
+
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="site-title">
+      <h1>Portfolio</h1>
+      <h2></h2>
+    </div>
+    </div>
+  </div>
+
+<!-- PORTFOLIO -->
+<div class="portfolio-wrapper">
+    <h1 class="sub-title"></h1>
+
+    <div class="gallery">
+        <div class="item"><img src="images/Hawk-Owl1.jpg"></div>
+        <div class="item"><img src="images/Hawk-Owl2.png"></div>
+        <div class="item"><img src="images/Dipper1.jpg"></div>
+        <div class="item"><img src="images/Kingfisher1.jpg"></div>
+        <div class="item"><img src="images/Kuningaskalastaja.jpg"></div>
+        <div class="item"><img src="images/kuningaskalastaja1.jpg"></div>
+        <div class="item"><img src="images/P1130567.jpg"></div>
+        <div class="item"><img src="images/Pygmy-owl2.jpg"></div>
+        <div class="item"><img src="images/Northernlights2.jpg"></div>
+        <div class="item"><img src="images/northernlights1.jpg"></div>
+        <div class="item"><img src="images/Pygmyowl.wide.jpg"></div>
+        <div class="item"><img src="images/Tähystäjä.jpg"></div>
+        <div class="item"><img src="images/Ruokatauko.jpg"></div>
+        <div class="item"><img src="images/vesilintu.jpg"></div>
+        <div class="item"><img src="images/runko.jpg"></div>
+        <div class="item"><img src="images/1330681.jpg"></div>
+        <div class="item"><img src="images/P1240639.jpg"></div>
+        <div class="item"><img src="images/Pygmy-Owl1.jpg"></div>
+        <div class="item"><img src="images/runko.jpg"></div>
+        <div class="item"><img src="images/Dipper2.jpg"></div>
+        <div class="item"><img src="images/P1340774.jpg"></div>
+        <div class="item"><img src="images/DSC09487[1].jpg"></div>
+    </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <span class="close">&times;</span>
+  <span class="nav left">&#10094;</span>
+  <span class="nav right">&#10095;</span>
+  <img id="lightbox-img" src="">
+</div>
+
+
+<script>
+  // ----- LIGHTBOX -----
+const images = document.querySelectorAll('.gallery .item img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+
+const prevBtn = document.querySelector('#lightbox .nav.left');
+const nextBtn = document.querySelector('#lightbox .nav.right');
+const closeBtn = document.querySelector('#lightbox .close');
+
+let currentIndex = 0;
+
+// Avaa lightbox klikkaamalla kuvaa
+images.forEach((img, index) => {
+  img.addEventListener('click', () => {
+    currentIndex = index;
+    lightboxImg.src = img.src;
+    lightbox.classList.add('active');
+
+    // Poista zoom kun avataan
+    lightboxImg.classList.remove('zoomed');
+  });
+});
+
+// Näytä kuva (selailu)
+function showImage(index) {
+  if (index < 0) index = images.length - 1;
+  if (index >= images.length) index = 0;
+  currentIndex = index;
+  lightboxImg.src = images[currentIndex].src;
+
+  // Poista zoom aina kun vaihdetaan kuvaa
+  lightboxImg.classList.remove('zoomed');
+}
+
+// Nuoli vasemmalle
+prevBtn.addEventListener('click', () => {
+  showImage(currentIndex - 1);
+});
+
+// Nuoli oikealle
+nextBtn.addEventListener('click', () => {
+  showImage(currentIndex + 1);
+});
+
+// Sulje painamalla X
+closeBtn.addEventListener('click', () => {
+  lightbox.classList.remove('active');
+  lightboxImg.classList.remove('zoomed');
+});
+
+// Sulje klikkaamalla taustaa
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) {
+    lightbox.classList.remove('active');
+    lightboxImg.classList.remove('zoomed');
+  }
+});
+
+// Näppäimet: nuoli vasen/oikea ja Esc
+document.addEventListener('keydown', (e) => {
+  if (lightbox.classList.contains('active')) {
+    if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+    if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+    if (e.key === 'Escape') {
+      lightbox.classList.remove('active');
+      lightboxImg.classList.remove('zoomed');
+    }
+  }
+});
+
+// ----- ZOOM (klikattaessa lightbox-kuvaa) -----
+lightboxImg.addEventListener('click', () => {
+  lightboxImg.classList.toggle('zoomed');
+});
+
+// ----- MASONRY (grid korkeus laskenta) -----
+const items = document.querySelectorAll('.gallery .item');
+
+items.forEach(item => {
+  const img = item.querySelector('img');
+
+  img.addEventListener('load', () => {
+    const rowHeight = parseInt(getComputedStyle(document.querySelector('.gallery')).getPropertyValue('grid-auto-rows'));
+    const rowGap = parseInt(getComputedStyle(document.querySelector('.gallery')).getPropertyValue('gap'));
+    const height = img.getBoundingClientRect().height;
+
+    const rowSpan = Math.ceil((height + rowGap) / (rowHeight + rowGap));
+    item.style.gridRowEnd = `span ${rowSpan}`;
+  });
+});
+</script>
+
+</body>
+</html>

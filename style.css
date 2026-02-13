@@ -1,0 +1,365 @@
+html {
+    scroll-behavior: smooth;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+* {
+    font-family: 'Cinzel', serif;
+    color: rgb(236, 236, 236);
+}
+body{
+    background:rgb(255, 255, 255);
+    color: #dddddd;
+}
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/P1240639.jpg);
+    background-size: cover;
+    background-position: center;
+
+}
+.container{
+    padding: 15px 0;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center; /* muutettu */
+    gap: 4px;               /* säädä tätä */
+} 
+
+.logo{
+    width: 160px;
+    margin-top: 10px;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 1px 15px;
+}
+
+nav ul li a{
+    color: "#ffffff";
+    text-decoration: none;
+    font-size: 15px;
+    position: relative;
+    letter-spacing: 6px;
+    text-transform: uppercase; 
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #597480;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.2s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+
+}
+.header-text{
+    margin-top: 1%;
+    font-size: 30px;
+}
+.header-text h1{
+    font-size: 60px;
+    margin-top: 10px;
+}
+.header-text h1 span{
+    color:rgb(243, 243, 243);
+}
+.header-text span{
+     font-family: 'Cinzel', serif;
+    color:rgb(243, 243, 243);
+}
+/*-------------about-----------------*/
+#about{
+    padding: 70px 0;
+    color:#ababab;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1{
+    flex-basis: 35%;
+}
+.about-col-1 img{
+    width: 90%;
+    border-radius: 15px;
+    margin-left: 50px;
+}
+.about-col-2{
+    flex-basis: 60%;
+}
+
+.sub-title{
+    font-size: 50px;
+    font-weight: 600;
+    color: rgb(39, 39, 39);
+    font-family: Arial, sans-serif;
+}
+
+.down-title{
+    font-size: 20px;
+    color:rgb(39, 39, 39);
+    font-family: Arial, sans-serif;
+    font-weight: 590;
+
+}
+
+#header{
+    position: relative; /* TÄRKEÄ */
+    transition: background-image 0.5s ease-in-out;
+}
+
+/* Nuolet */
+.arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    user-select: none;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.arrow:hover{
+    opacity: 0.6;
+}
+
+.left{
+    left: 30px;
+}
+
+.right{
+    right: 30px;
+}
+
+.site-title{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.site-title h1{
+    font-size: 28px;
+    margin: 0;
+    letter-spacing: 6px;
+    text-transform: uppercase; 
+}
+
+.site-title h2{
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 8px;
+    letter-spacing: 4px;
+    text-transform: uppercase; 
+}
+
+
+
+
+
+
+#portfolio-page{
+    padding: 10px;
+    background: #dddddd;
+    min-height: 100vh;
+}
+
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.gallery img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery img:hover{
+    transform: scale(1.05);
+}
+
+.gallery img:first-child{
+    grid-row: span 2;
+}
+
+.portfolio-wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    background: #ffffff;
+}
+
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  grid-auto-rows: 10px;
+}
+
+.item img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.item{
+  grid-row-end: span 10;
+}
+
+
+
+#portfolio-banner{
+  width: 100%;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+}
+
+#portfolio-banner::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(images/Kingfisher1.jpg);
+  background-size: cover;
+  background-position: center;
+  transition: filter 0.6s ease;
+  z-index: 1;
+
+  /* ALUSSA blur */
+  filter: blur(4px);
+}
+
+#portfolio-banner:hover::before{
+  /* hoverissa terävä */
+  filter: blur(2px);
+}
+
+#portfolio-banner .container{
+  position: relative;
+  z-index: 2; /* tärkeä, jotta teksti tulee päälle */
+  padding: 15px 0;
+}
+
+.site-title{
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-top: 10px;
+  color: white;
+}
+
+.site-title h1{
+  font-size: 40px;
+  margin: 0;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+.site-title h2{
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 8px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+
+
+
+
+/* LIGHTBOX */
+.hidden {
+  display: none;
+}
+
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;           /* piilotetaan aluksi */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Kun lightbox on auki */
+#lightbox.active {
+  display: flex;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  object-fit: contain;
+  border-radius: 0px;
+  transform: scale(1);          /* normaalikoko */
+  transition: transform 0.4s ease;
+}
+
+/* Zoom-luokka (tulee päälle klikkauksella) */
+#lightbox img.zoomed {
+  transform: scale(1.7);       /* 70% zoom */
+}
+
+#lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+#lightbox .nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+#lightbox .nav.left {
+  left: 30px;
+}
+
+#lightbox .nav.right {
+  right: 30px;
+}
+
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 10px;
+  gap: 20px;
+  padding: 0 60px;
+}
+
+.item img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
