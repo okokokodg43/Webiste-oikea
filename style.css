@@ -30,12 +30,17 @@ nav{
     align-items: center;
     justify-content: center; /* muutettu */
     gap: 4px;               /* säädä tätä */
+    flex-wrap: wrap;
 } 
+
 
 .logo{
     width: 160px;
     margin-top: 10px;
+    height: auto;
 }
+
+
 nav ul li{
     display: inline-block;
     list-style: none;
@@ -132,6 +137,7 @@ nav ul li a:hover::after{
     cursor: pointer;
     padding: 10px;
     user-select: none;
+      touch-action: manipulation; /* parantaa mobiilituntumaa */
     z-index: 10;
     transition: 0.3s;
 }
