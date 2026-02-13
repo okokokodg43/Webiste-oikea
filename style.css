@@ -18,8 +18,17 @@ body{
     height: 100vh;
     background-image: url(images/P1240639.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: center center; /* keskitetään vaakasuoraan ja pystysuoraan */
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
 
+}
+@media (max-width: 600px) {
+    #header {
+        background-position: center top; /* keskitetään vaakasuoraan ja ylhäältä */
+        background-size: cover;          /* varmistaa, että kuva täyttää koko headerin */
+    }
 }
 .container{
     padding: 15px 0;
