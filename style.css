@@ -378,3 +378,57 @@ nav ul li a:hover::after{
   height: auto;
   display: block;
 }
+
+#connect {
+    padding: 50px 0;
+    background-color: #868686;       /* Aluksi valkoinen */
+    text-align: center;
+    
+}
+
+#connect.active {
+    background-color: #868686;      /* Fade lopulliseen väriin */
+}
+
+.social-icons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.icon svg {
+    width: 80px;          /* hieman pienempi */
+    height: 80px;
+    color: #9a9a9a;       /* vaalea mutta näkyvä harmaa */
+    transition: all 0.3s ease;
+}
+
+.icon:hover svg {
+    color: #444;          /* tummempi hover */
+    transform: scale(1.08);
+}
+
+.background-gradient {
+  height: 10px; /* tai haluamasi korkeus */
+  background: linear-gradient(to bottom, #ffffff,#868686 );
+  
+}
+
+.sub-title1 {
+  font-family: 'Cinzel', serif;  /* sama fontti */
+  color: rgb(236, 236, 236);     /* sama vaalea väri */
+  letter-spacing: 3px;            /* jos haluat samaa välistystä */
+  text-transform: uppercase;      /* jos haluat kaikki isot */
+  font-weight: 600;               /* tai sama kuin Okko Karhunessa */
+  font-size: 50px;                /* voit säätää kokoa haluamallasi tavalla */
+-webkit-font-smoothing: antialiased;      /* Safari, Chrome */
+  -moz-osx-font-smoothing: grayscale;  
+    -webkit-font-smoothing: antialiased;        /* Safari, Chrome */
+  -moz-osx-font-smoothing: grayscale;         /* Firefox */
+
+  /* Blur / pehmeä reunatehoste */
+  text-shadow:
+     0 0 3px rgba(236, 236, 236, 0.4),
+     0 0 5px rgba(236, 236, 236, 0.3); 
+}
