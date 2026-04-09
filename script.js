@@ -1,6 +1,7 @@
 const header = document.getElementById("header");
 
 const images = [
+    "images/DSC03587-3.jpg",
     "images/P1240639.jpg",
     "images/Hawk-Owl2.png",
     "images/Dipper2.jpg"

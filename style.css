@@ -16,7 +16,7 @@ body{
 #header{
     width: 100%;
     height: 100vh;
-    background-image: url(images/P1240639.jpg);
+    background-image: url(images/DSC03587-3.jpg);
     background-size: cover;
     background-position: center center; /* keskitetään vaakasuoraan ja pystysuoraan */
     background-repeat: no-repeat;
@@ -56,27 +56,26 @@ nav ul li{
     margin: 1px 15px;
 }
 
-nav ul li a{
-    color: "#ffffff";
+nav ul li a {
+    color: #ffffff;
     text-decoration: none;
     font-size: 15px;
-    position: relative;
     letter-spacing: 6px;
-    text-transform: uppercase; 
-}
-nav ul li a::after{
-    content: '';
-    width: 0;
-    height: 3px;
-    background: #597480;
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition: 0.2s;
-}
-nav ul li a:hover::after{
-    width: 100%;
+    text-transform: uppercase;
 
+    padding: 6px 12px;
+    border-radius: 8px;
+
+    transition: 
+        background-color 0.6s cubic-bezier(0.25, 0.8, 0.25, 1),
+        transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
+        box-shadow 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(1px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 .header-text{
     margin-top: 1%;
@@ -249,29 +248,25 @@ nav ul li a:hover::after{
   overflow: hidden;
 }
 
-#portfolio-banner::before{
+#portfolio-banner::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url(images/Kingfisher1.jpg);
+  background-image: url(images/DSC03587.jpg); 
   background-size: cover;
   background-position: center;
-  transition: filter 0.6s ease;
   z-index: 1;
-
-  /* ALUSSA blur */
-  filter: blur(4px);
+  filter: none;
+  transition: none; 
+  filter: blur(10px);
 }
 
-#portfolio-banner:hover::before{
-  /* hoverissa terävä */
-  filter: blur(2px);
-}
+
+
 
 #portfolio-banner .container{
   position: relative;
-  z-index: 2; /* tärkeä, jotta teksti tulee päälle */
-  padding: 15px 0;
+  z-index: 2;
 }
 
 .site-title{
@@ -416,19 +411,85 @@ nav ul li a:hover::after{
 }
 
 .sub-title1 {
-  font-family: 'Cinzel', serif;  /* sama fontti */
-  color: rgb(236, 236, 236);     /* sama vaalea väri */
-  letter-spacing: 3px;            /* jos haluat samaa välistystä */
-  text-transform: uppercase;      /* jos haluat kaikki isot */
-  font-weight: 600;               /* tai sama kuin Okko Karhunessa */
-  font-size: 50px;                /* voit säätää kokoa haluamallasi tavalla */
--webkit-font-smoothing: antialiased;      /* Safari, Chrome */
+  font-family: 'Cinzel', serif;  
+  color: rgb(236, 236, 236);     
+  letter-spacing: 3px;           
+  text-transform: uppercase;     
+  font-weight: 600;               
+  font-size: 50px;               
+-webkit-font-smoothing: antialiased;     
   -moz-osx-font-smoothing: grayscale;  
-    -webkit-font-smoothing: antialiased;        /* Safari, Chrome */
-  -moz-osx-font-smoothing: grayscale;         /* Firefox */
+    -webkit-font-smoothing: antialiased;       
+  -moz-osx-font-smoothing: grayscale;        
 
-  /* Blur / pehmeä reunatehoste */
+  
   text-shadow:
      0 0 3px rgba(236, 236, 236, 0.4),
      0 0 5px rgba(236, 236, 236, 0.3); 
+}
+
+#footer-socials {
+  background-color: #2e2a29; /* Tumma tausta, säädä halutessasi */
+  padding: 90px 0;
+  color: #ccc;
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+#footer-socials .footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#footer-socials .footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 30px;
+}
+
+#footer-socials .footer-nav ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#footer-socials .footer-nav ul li a:hover {
+  color: #fff;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-icon svg {
+  color: #ccc;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.footer-icon:hover svg {
+  color: #fff;
+}
+.footer-copy {
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 180px;
+  font-style: italic;
+}
+.footer-copy {
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+  font-style: italic;
+  margin-top: 80px; /* siirtää copyrightin alas */
 }
