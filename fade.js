@@ -7,13 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        connectSection.classList.add("active");  // aktivoi fade
+        connectSection.classList.add("active");  
       } else {
-        connectSection.classList.remove("active"); // palauttaa valkoiseksi kun scrollaa pois
+        connectSection.classList.remove("active"); 
       }
     });
   }, {
-    threshold: 0.1  // triggeröi kun 10% osiossa näkyvissä
+    threshold: 0.1 
   });
 
   observer.observe(connectSection);

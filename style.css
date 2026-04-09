@@ -18,7 +18,7 @@ body{
     height: 100vh;
     background-image: url(images/DSC03587-3.jpg);
     background-size: cover;
-    background-position: center center; /* keskitetään vaakasuoraan ja pystysuoraan */
+    background-position: center center; 
     background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
@@ -26,8 +26,8 @@ body{
 }
 @media (max-width: 600px) {
     #header {
-        background-position: center top; /* keskitetään vaakasuoraan ja ylhäältä */
-        background-size: cover;          /* varmistaa, että kuva täyttää koko headerin */
+        background-position: center top; 
+        background-size: cover;          
     }
 }
 .container{
@@ -37,8 +37,8 @@ body{
 nav{
     display: flex;
     align-items: center;
-    justify-content: center; /* muutettu */
-    gap: 4px;               /* säädä tätä */
+    justify-content: center; 
+    gap: 4px;               
     flex-wrap: wrap;
 } 
 
@@ -145,7 +145,7 @@ nav ul li a:hover {
     cursor: pointer;
     padding: 10px;
     user-select: none;
-      touch-action: manipulation; /* parantaa mobiilituntumaa */
+      touch-action: manipulation; 
     z-index: 10;
     transition: 0.3s;
 }
@@ -296,7 +296,7 @@ nav ul li a:hover {
 
 
 
-/* LIGHTBOX */
+
 .hidden {
   display: none;
 }
@@ -308,13 +308,13 @@ nav ul li a:hover {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.9);
-  display: none;           /* piilotetaan aluksi */
+  display: none;           
   align-items: center;
   justify-content: center;
   z-index: 9999;
 }
 
-/* Kun lightbox on auki */
+
 #lightbox.active {
   display: flex;
 }
@@ -324,13 +324,13 @@ nav ul li a:hover {
   max-height: 80%;
   object-fit: contain;
   border-radius: 0px;
-  transform: scale(1);          /* normaalikoko */
+  transform: scale(1);         
   transition: transform 0.4s ease;
 }
 
-/* Zoom-luokka (tulee päälle klikkauksella) */
+
 #lightbox img.zoomed {
-  transform: scale(1.7);       /* 70% zoom */
+  transform: scale(1.7);      
 }
 
 #lightbox .close {
@@ -376,13 +376,13 @@ nav ul li a:hover {
 
 #connect {
     padding: 50px 0;
-    background-color: #868686;       /* Aluksi valkoinen */
+    background-color: #868686;      
     text-align: center;
     
 }
 
 #connect.active {
-    background-color: #868686;      /* Fade lopulliseen väriin */
+    background-color: #868686;     
 }
 
 .social-icons {
@@ -393,19 +393,19 @@ nav ul li a:hover {
 }
 
 .icon svg {
-    width: 80px;          /* hieman pienempi */
+    width: 80px;         
     height: 80px;
-    color: #9a9a9a;       /* vaalea mutta näkyvä harmaa */
+    color: #9a9a9a;      
     transition: all 0.3s ease;
 }
 
 .icon:hover svg {
-    color: #444;          /* tummempi hover */
+    color: #444;         
     transform: scale(1.08);
 }
 
 .background-gradient {
-  height: 10px; /* tai haluamasi korkeus */
+  height: 10px; 
   background: linear-gradient(to bottom, #ffffff,#868686 );
   
 }
@@ -429,7 +429,7 @@ nav ul li a:hover {
 }
 
 #footer-socials {
-  background-color: #2e2a29; /* Tumma tausta, säädä halutessasi */
+  background-color: #2e2a29; 
   padding: 90px 0;
   color: #ccc;
   font-family: 'Cinzel', serif;
@@ -491,5 +491,5 @@ nav ul li a:hover {
   font-size: 12px;
   color: #aaa;
   font-style: italic;
-  margin-top: 80px; /* siirtää copyrightin alas */
+  margin-top: 80px; 
 }
